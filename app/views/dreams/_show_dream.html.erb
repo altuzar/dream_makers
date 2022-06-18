@@ -1,0 +1,28 @@
+<div class="col">
+  <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-4 shadow-lg" style="background-image: url('/img<%= [1, 2, 3].sample(1).first %>.jpg');">
+    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+      <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+        <%= dream.description.truncate(150) %>
+      </h2>
+      <ul class="d-flex list-unstyled mt-auto">
+        <li class="me-auto">
+          <a href="https://twitter.com/share?<%= "url=#{ dream_url(dream) }&text=Lets dream #DreamMakersCommunity" %>" target="_blank" >
+            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#bi-share"/></svg>
+            <small>Share</small>
+          </a>
+          <br>
+          <a href="<%= report_dream_path(dream) %>" data-confirm="This action will report dream as unpublishable until our team takes a look. Are you sure?">
+            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#bi-exclamation-circle"/></svg>
+            <small>Report</small>
+          </a>
+        </li>
+        <li class="d-flex align-items-center">
+           <a href="<%= "mailto:#{dream.email}?subject=I want to help fulfill your dream" %>">
+            <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#bi-chat-heart"/></svg>
+            <small>Contact</small>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
