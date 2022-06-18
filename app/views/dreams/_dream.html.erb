@@ -1,0 +1,23 @@
+<div id="<%= dom_id dream %>">
+  <p>
+    <strong>Description:</strong>
+    <%= dream.description %>
+  </p>
+
+  <p>
+  <% if dream.email %>
+      Email: <%= link_to("Contact", "mailto:#{dream.email}?subject=I want to help fulfill your dream") %>
+  <% end %>
+  </p>
+
+  <small>
+    <%= link_to("Share this dream", dream) %>
+  </small>
+  <small>
+    Mark as fulfilled (only dreamer can do this)
+  </small>
+  <small>
+    Report this dream
+  </small>
+
+</div>

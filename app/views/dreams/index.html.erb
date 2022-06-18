@@ -1,0 +1,15 @@
+<h1><%= link_to("Dream Makers", root_path) %></h1>
+
+<p style="color: green"><%= notice %></p>
+
+<div id="dreams">
+  <% @dreams.each do |dream| %>
+    <%= render dream %>
+  <% end %>
+</div>
+
+<hr>
+
+<p>Enter your dream and what is stopping you</p>
+
+<%= link_to "Enter your dream", new_dream_path %>
