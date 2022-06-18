@@ -1,9 +1,6 @@
-<h1><%= link_to("Dream Makers", root_path) %></h1>
 
-<p style="color: green"><%= notice %></p>
-
-<%= render @dream %>
-
-<div>
-  <%= link_to "Back to dreams", dreams_path %>
+<div class="container px-4 py-5 align-self-center" id="custom-cards">
+  <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5 justify-content-center">
+    <%= render("show_dream", dream: @dream) %>
+  </div>
 </div>

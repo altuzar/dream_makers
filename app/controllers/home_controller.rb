@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
     @dream = Dream.new
-    @dreams = Dream.all.sample(3)
+    @dreams = Dream.published.limit(3).sample(3)
   end
 end

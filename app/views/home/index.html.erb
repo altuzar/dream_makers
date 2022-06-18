@@ -19,33 +19,7 @@
 
   <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
     <% @dreams.first(3).each do |dream| %>
-      <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-4 shadow-lg" style="background-image: url('img1.jpg');">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= dream.description%></h2>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="me-auto">
-                <a href="<%= "mailto:#{dream.email}?subject=I want to help fulfill your dream" %>">
-                  <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#bi-chat-heart"/></svg>
-                  <small>Report</small>
-                </a>
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                <small>Share</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                <small>Like</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                <small>Like</small>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <%= render dream %>
     <% end %>
   </div>
 </div>

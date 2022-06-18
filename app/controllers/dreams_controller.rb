@@ -1,9 +1,9 @@
 class DreamsController < ApplicationController
-  before_action :set_dream, only: %i[ show edit update destroy ]
+  before_action :set_dream, only: %i[ show edit update destroy report ]
 
   # GET /dreams or /dreams.json
   def index
-    @dreams = Dream.all
+    @dreams = Dream.published.limit(100).sample(100)
   end
 
   # GET /dreams/1 or /dreams/1.json
@@ -38,6 +38,13 @@ class DreamsController < ApplicationController
       format.html { redirect_to dreams_url, notice: "Dream was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def report
+    @dream.status = "Reported"
+    @dream.published = false
+    @dream.save!
+    redirect_to dreams_url, notice: "Dream was reported and unpublished."
   end
 
   private
